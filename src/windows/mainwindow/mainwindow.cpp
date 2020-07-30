@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 
 #include <QScreen>
-#include <QGuiApplication>  
+#include <QGuiApplication>   
 
 MainWindow::MainWindow(){
     //MainWindow intel
