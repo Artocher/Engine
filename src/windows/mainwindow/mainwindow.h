@@ -4,6 +4,10 @@
 #include <QMainWindow> 
 #include <qpointer.h>
 
+#include "openglwindow.h"
+
+class FileDock;
+
 class MainWindow : public QMainWindow{
     public:
         //Constructors
@@ -19,6 +23,8 @@ class MainWindow : public QMainWindow{
 
     private:
         QPointer<QScreen> _screen;
+        FileDock* _fileDock;
+        OpenGLWindow* _openGLWindow;
 };
 
 #endif
