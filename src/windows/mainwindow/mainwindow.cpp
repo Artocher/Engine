@@ -23,6 +23,7 @@ MainWindow::MainWindow(){
     //Setting up the menu
 
     //Setting up toolbars
+
 } 
 
 MainWindow::~MainWindow(){

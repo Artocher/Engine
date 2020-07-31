@@ -6,6 +6,9 @@ target_include_directories(${CMAKE_PROJECT_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/windows/openglwindow
     ${CMAKE_CURRENT_SOURCE_DIR}/structures/
     ${CMAKE_CURRENT_SOURCE_DIR}/docks/
+    ${CMAKE_CURRENT_SOURCE_DIR}/parsers/obj/
+    ${CMAKE_CURRENT_SOURCE_DIR}/shaders/
+    ${CMAKE_CURRENT_SOURCE_DIR}/shaderprograms/
 )
 
 target_sources(${CMAKE_PROJECT_NAME}
@@ -13,4 +16,8 @@ target_sources(${CMAKE_PROJECT_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/windows/mainwindow/mainwindow.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/windows/openglwindow/openglwindow.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/docks/filedock.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parsers/obj/object_file_parser.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/shaders/shader.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/shaderprograms/shaderprogram.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/shaderprograms/baseshaderprogram.cpp
 )
