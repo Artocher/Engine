@@ -5,9 +5,8 @@
 #include <qpointer.h>
 #include <QResizeEvent>
 
-#include "openglwindow.h"
-
 class FileDock;
+class MainOpenGLWindow;
 
 class MainWindow : public QMainWindow{
     public:
@@ -27,7 +26,7 @@ class MainWindow : public QMainWindow{
     private:
         QPointer<QScreen> _screen;
         FileDock* _fileDock;
-        OpenGLWindow* _openGLWindow;
+        MainOpenGLWindow* _mainOpenGLWindow;
 };
 
 #endif

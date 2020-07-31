@@ -1,17 +1,17 @@
 #include "engine.h"
 
-AbstractEngine::AbstractEngine() : QOpenGLFunctions(){
+Engine::Engine() : QOpenGLFunctions(){
 
 }
 
-AbstractEngine::~AbstractEngine(){
+Engine::~Engine(){
 
 }
 
-void AbstractEngine::setViewportWidth(int viewportWidth){
+void Engine::setViewportWidth(int viewportWidth){
     _viewportWidth = viewportWidth;
 }
 
-void AbstractEngine::setViewportHeight(int viewportHeight){
+void Engine::setViewportHeight(int viewportHeight){
     _viewportHeight = viewportHeight;
 }

@@ -1,16 +1,16 @@
-#include "engine.h"
+#include "mainengine.h"
 
 #include <iostream>
 
-Engine::Engine() : AbstractEngine(){
+MainEngine::MainEngine() : Engine(){
     
 }
 
-Engine::~Engine(){
+MainEngine::~MainEngine(){
 
 }
 
-void Engine::init(){
+void MainEngine::init(){
     initializeOpenGLFunctions(); 
     initShaders();
 
@@ -26,35 +26,35 @@ void Engine::init(){
     initModels();  
 }
 
-void Engine::initModels(){
+void MainEngine::initModels(){
 
 }
 
-void Engine::render(){
-    glClearColor(0.1, 0.1, 0.1, 1);
+void MainEngine::render(){
+    glClearColor(0.2, 0.2, 0.2, 1);
     
 }
 
-void Engine::initShaders(){
+void MainEngine::initShaders(){
 
 }
 
-void Engine::sendDataToShader(){
+void MainEngine::sendDataToShader(){
 
 }
 
-void Engine::keyPress(QKeyEvent* event){
+void MainEngine::keyPress(QKeyEvent* event){
     _keys[event->key()] = true;
 }
 
-void Engine::keyRelease(QKeyEvent* event){
+void MainEngine::keyRelease(QKeyEvent* event){
     _keys[event->key()] = false;
 }
 
-void Engine::mouseMove(QMouseEvent* event, QPoint offset){
-
+void MainEngine::mouseMove(QMouseEvent* event, QPoint offset){
+    
 }
 
-void Engine::mousePress(QMouseEvent* event){
+void MainEngine::mousePress(QMouseEvent* event){
 
 }

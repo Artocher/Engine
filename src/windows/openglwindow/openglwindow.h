@@ -2,6 +2,8 @@
 #define OPENGLWINDOW_H
 
 #include <QOpenGLWidget>
+
+#include "engine.h"
  
 class OpenGLWindow : public QOpenGLWidget{  
     public:
@@ -23,7 +25,9 @@ class OpenGLWindow : public QOpenGLWidget{
 	    void keyPressEvent(QKeyEvent* event) override; 
 	    void keyReleaseEvent(QKeyEvent* event) override;
 	    void mousePressEvent(QMouseEvent* event) override;
-	    void mouseMoveEvent(QMouseEvent* event) override; 
+	    void mouseMoveEvent(QMouseEvent* event) override;
+    protected:
+        Engine* _engine;
 };
 
 #endif 

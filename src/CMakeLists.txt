@@ -19,6 +19,7 @@ target_sources(${CMAKE_PROJECT_NAME}
     PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/windows/mainwindow/mainwindow.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/windows/openglwindow/openglwindow.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/windows/openglwindow/mainopenglwindow.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/docks/filedock.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/parsers/obj/object_file_parser.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/shaders/shader.cpp

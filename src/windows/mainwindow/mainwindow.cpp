@@ -4,7 +4,7 @@
 #include <QGuiApplication>   
 
 #include "filedock.h"
-#include "openglwindow.h"
+#include "mainopenglwindow.h"
 
 MainWindow::MainWindow(){
     //MainWindow intel
@@ -13,8 +13,8 @@ MainWindow::MainWindow(){
     setPalette(QPalette(QColor(60,60,60)));       
  
     //Setting up the central widget 
-    _openGLWindow = new OpenGLWindow(this);  
-    setCentralWidget(_openGLWindow);
+    _mainOpenGLWindow = new MainOpenGLWindow(this, QPoint(500,500));  
+    setCentralWidget(_mainOpenGLWindow);
 
     //Setting up the docks
     _fileDock = new FileDock();
