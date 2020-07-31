@@ -6,7 +6,8 @@
 #include <QKeyEvent>
 #include <QMouseEvent>
 
-#include "baseshaderprogram.h"
+class Camera;
+class BaseShaderProgram;
 
 class Engine : protected QOpenGLFunctions{
     public:
@@ -40,6 +41,8 @@ class Engine : protected QOpenGLFunctions{
         unsigned int _viewportHeight;
 
         BaseShaderProgram* _shaderProgram; 
+
+        Camera* _camera;
         
         QMap<int, bool> _keys; 
 };
