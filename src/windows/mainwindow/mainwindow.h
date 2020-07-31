@@ -3,6 +3,7 @@
 
 #include <QMainWindow> 
 #include <qpointer.h>
+#include <QResizeEvent>
 
 #include "openglwindow.h"
 
@@ -20,6 +21,8 @@ class MainWindow : public QMainWindow{
 	    MainWindow(MainWindow&&) = delete;
         MainWindow& operator = (const MainWindow&) = delete;
 	    MainWindow& operator = (MainWindow&&) = delete; 
+
+        void resizeEvent(QResizeEvent* event);
 
     private:
         QPointer<QScreen> _screen;

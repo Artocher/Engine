@@ -28,3 +28,7 @@ MainWindow::MainWindow(){
 MainWindow::~MainWindow(){
 
 }  
+
+void MainWindow::resizeEvent(QResizeEvent* event){
+    _fileDock->setMinimumHeight(event->size().height() / 4);
+}
