@@ -10,6 +10,7 @@ target_include_directories(${CMAKE_PROJECT_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/shaders/
     ${CMAKE_CURRENT_SOURCE_DIR}/shaderprograms/
     ${CMAKE_CURRENT_SOURCE_DIR}/object/
+    ${CMAKE_CURRENT_SOURCE_DIR}/mesh/
 )
 
 target_sources(${CMAKE_PROJECT_NAME}
@@ -22,4 +23,5 @@ target_sources(${CMAKE_PROJECT_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/shaderprograms/shaderprogram.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/shaderprograms/baseshaderprogram.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/object/object.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mesh/mesh.cpp
 )
