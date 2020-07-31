@@ -13,6 +13,7 @@ target_include_directories(${CMAKE_PROJECT_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/mesh/
     ${CMAKE_CURRENT_SOURCE_DIR}/engines/
     ${CMAKE_CURRENT_SOURCE_DIR}/camera/
+    ${CMAKE_CURRENT_SOURCE_DIR}/texture/
 
 )
 
@@ -31,4 +32,5 @@ target_sources(${CMAKE_PROJECT_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/engines/engine.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engines/mainengine.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/camera/camera.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/texture/texture.cpp
 )
