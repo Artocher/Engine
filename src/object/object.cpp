@@ -12,15 +12,6 @@ Object::~Object(){
 
 }
 
-Object::Object(){
-    _position = QVector3D(0,0,0);
-    _rotation_x = 0;
-    _rotation_y = 0;
-    _rotation_z = 0;
-    _scale = QVector3D(1,1,1);  
-
-}
-
 void Object::setPosition(QVector3D position){
     _position = position;
 }

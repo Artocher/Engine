@@ -1,7 +1,7 @@
 #include "mesh.h"
 #include "object_file_parser.h"
 
-Mesh::Mesh(std::string filename, QVector3D position, QVector3D scale, qreal rotation_x, qreal rotation_y, qreal rotation_z) : Object(position, scale, rotation_x, rotation_y, rotation_z), _indexBuffer(QOpenGLBuffer::IndexBuffer){
+Mesh::Mesh(std::string filename) : _indexBuffer(QOpenGLBuffer::IndexBuffer){
 	
 	getDataFromFile(filename);
 

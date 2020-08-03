@@ -5,6 +5,9 @@
 #include "camera.h"
 #include "baseshaderprogram.h"
 #include "shader.h"
+#include "model.h" 
+#include "mesh.h"
+#include "texture.h"
 
 MainEngine::MainEngine() : Engine(){
     
@@ -37,7 +40,7 @@ void MainEngine::init(){
 }
 
 void MainEngine::initModels(){
-
+    
 }
 
 void MainEngine::render(){

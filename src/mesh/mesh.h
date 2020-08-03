@@ -6,19 +6,18 @@
 
 #include "QOpenGLBuffer"
 
-#include "meshdata.h"
-#include "object.h" 
+#include "meshdata.h" 
 
-class Mesh : public Object{  
+class Mesh{  
     public:
-        Mesh(std::string filename, QVector3D position, QVector3D scale, qreal rotation_x, qreal rotation_y, qreal rotation_z);
+        Mesh(std::string filename);
         Mesh(const Mesh& mesh); 
         Mesh(Mesh&& mesh);
         virtual ~Mesh();
 
         QMatrix4x4 getModelMatrix();
         MeshData* getMeshData();
-        GLenum getDrawMode();
+        GLenum getDrawMode(); 
 
         QOpenGLBuffer getArrayBuffer();
         QOpenGLBuffer getIndexBuffer();

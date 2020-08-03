@@ -4,7 +4,7 @@ target_include_directories(${CMAKE_PROJECT_NAME}
     PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/windows/mainwindow
     ${CMAKE_CURRENT_SOURCE_DIR}/windows/openglwindow
-    ${CMAKE_CURRENT_SOURCE_DIR}/structures/
+    ${CMAKE_CURRENT_SOURCE_DIR}/structures/ 
     ${CMAKE_CURRENT_SOURCE_DIR}/docks/
     ${CMAKE_CURRENT_SOURCE_DIR}/parsers/obj/
     ${CMAKE_CURRENT_SOURCE_DIR}/shaders/
@@ -14,6 +14,7 @@ target_include_directories(${CMAKE_PROJECT_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/engines/
     ${CMAKE_CURRENT_SOURCE_DIR}/camera/
     ${CMAKE_CURRENT_SOURCE_DIR}/texture/
+    ${CMAKE_CURRENT_SOURCE_DIR}/model/
 
 )
 
@@ -33,4 +34,5 @@ target_sources(${CMAKE_PROJECT_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/engines/mainengine.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/camera/camera.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/texture/texture.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/model/model.cpp
 )

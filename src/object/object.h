@@ -5,8 +5,7 @@
 
 class Object{
     public:
-        Object(QVector3D position, QVector3D scale, qreal rotation_x, qreal rotation_y, qreal rotation_z);
-        Object();
+        Object(QVector3D position = QVector3D(0,0,0), QVector3D scale = QVector3D(1,1,1), qreal rotation_x = 0, qreal rotation_y = 0, qreal rotation_z = 0);
         virtual~Object();
 
         //Position

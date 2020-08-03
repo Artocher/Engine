@@ -3,6 +3,8 @@
 
 #include "engine.h"
 
+class Model;
+
 class MainEngine : public Engine{
     public:
         MainEngine();
