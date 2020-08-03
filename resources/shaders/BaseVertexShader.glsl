@@ -13,7 +13,7 @@ attribute vec2 textureCoordinate;
 varying vec2 v_texcoord;   
  
 void main(){ 
-    gl_Position = projectionMatrix * viewMatrix * modelMatrix * position ; 
+    gl_Position = projectionMatrix * viewMatrix * modelMatrix * (position * vec4(10,10,10,1)); 
     v_texcoord = textureCoordinate; 
 }
 

@@ -1,10 +1,8 @@
 #ifndef MESH_H
 #define MESH_H
 
-#include "QVector3D"
-#include "QMatrix4x4"
-
-#include "QOpenGLBuffer"
+#include <QVector3D>
+#include <QOpenGLBuffer> 
 
 #include "meshdata.h" 
 
@@ -15,14 +13,12 @@ class Mesh{
         Mesh(Mesh&& mesh);
         virtual ~Mesh();
 
-        QMatrix4x4 getModelMatrix();
         MeshData* getMeshData();
         GLenum getDrawMode(); 
 
         QOpenGLBuffer getArrayBuffer();
         QOpenGLBuffer getIndexBuffer();
 
-        void setModelMatrix(QMatrix4x4& modelMatrix);
         void setDrawMode(GLenum drawMode);
 
         Mesh& operator=(const Mesh& other) noexcept;
@@ -32,9 +28,8 @@ class Mesh{
         QOpenGLBuffer _arrayBuffer;
         QOpenGLBuffer _indexBuffer; 
 
-        MeshData* _meshData;
-        QMatrix4x4 _modelMatrix; 
-        GLenum _drawMode;
+        MeshData* _meshData; 
+        GLenum _drawMode = GL_TRIANGLES;
 
     private:
         void getDataFromFile(std::string& filename);	 

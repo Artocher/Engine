@@ -12,7 +12,7 @@ void BaseShaderProgram::retrieveAttributesLocations(){
     _textureCoordinateLocation = attributeLocation("textureCoordinate");      
 }
 
-bool BaseShaderProgram::prepareToRender(Mesh* mesh, Texture* texture){
+bool BaseShaderProgram::prepareToRender(Mesh* mesh, Texture* texture, QMatrix4x4 modelMatrix){
     if(mesh == nullptr || texture == nullptr)
         return false;
     texture->bind();
@@ -31,7 +31,7 @@ bool BaseShaderProgram::prepareToRender(Mesh* mesh, Texture* texture){
     enableAttributeArray(_textureCoordinateLocation);
     setAttributeBuffer(_textureCoordinateLocation, GL_FLOAT, int(offset), 2, sizeof(VertexDescriptor));
 
-    setUniformValue("modelMatrix", mesh->getModelMatrix());
+    setUniformValue("modelMatrix", modelMatrix);
 
     return true;
 }

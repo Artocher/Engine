@@ -1,6 +1,7 @@
 #include "mainengine.h"
 
 #include <iostream>
+#include <cstdlib>
 
 #include "camera.h"
 #include "baseshaderprogram.h"
@@ -40,7 +41,18 @@ void MainEngine::init(){
 }
 
 void MainEngine::initModels(){
-    
+    Mesh* mesh = new Mesh("meshes/grid.obj");
+    Mesh* mGrass = new Mesh("meshes/Grass_update.obj"); 
+
+    Texture* texture = new Texture("textures/grassy_ground.jpg", true, true);
+    Texture* tGrass = new Texture("textures/grass.png", true, true);
+
+    Model* terrain = new Model();
+    terrain->setTexture(texture);
+    terrain->setMesh(mesh);
+    terrain->setShaderProgram(_shaderProgram);
+
+    models.push_back(terrain);
 }
 
 void MainEngine::render(){
@@ -48,6 +60,10 @@ void MainEngine::render(){
 
     _camera->updateCameraPosition(_keys); 
     sendDataToShader();
+    
+    for(int i = 0; i < models.size(); i++){
+        models[i]->render();
+    }
 }
 
 void MainEngine::initShaders(){

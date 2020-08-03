@@ -52,11 +52,3 @@ QOpenGLBuffer Mesh::getIndexBuffer(){
 void Mesh::setDrawMode(GLenum drawMode){
     _drawMode = drawMode;
 }
-
-QMatrix4x4 Mesh::getModelMatrix(){
-    return _modelMatrix;
-}
-
-void Mesh::setModelMatrix(QMatrix4x4& modelMatrix){
-    _modelMatrix = modelMatrix;
-}
