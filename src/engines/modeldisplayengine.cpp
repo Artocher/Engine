@@ -1,7 +1,6 @@
-#include "mainengine.h"
+#include "modeldisplayengine.h"
 
 #include <iostream>
-#include <cstdlib>
 
 #include "camera.h"
 #include "baseshaderprogram.h"
@@ -10,25 +9,25 @@
 #include "mesh.h"
 #include "texture.h"
 
-MainEngine::MainEngine() : Engine(){
+ModelDisplayEngine::ModelDisplayEngine() : Engine(){
     
 }
 
-MainEngine::~MainEngine(){
+ModelDisplayEngine::~ModelDisplayEngine(){
 
-}
+} 
 
-void MainEngine::init(){
-    initializeOpenGLFunctions(); 
+void ModelDisplayEngine::init(){
+    initializeOpenGLFunctions();    
     initShaders();
 
-    glClearColor(0.1, 0.1, 0.1, 1);
+    glClearColor(1,1,1,1);
 
-    _camera = new Camera(QVector3D(0, 10, 10), -30, -90, QVector3D(0,1,0));
+    _camera = new Camera(QVector3D(0, 12, 12), -30, -90, QVector3D(0,1,0)); 
 
     _camera->setFov(70); 
     _camera->setNearPlane(0.1);
-    _camera->setFarPlane(3000); 
+    _camera->setFarPlane(300);     
 
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_BLEND);
@@ -37,10 +36,10 @@ void MainEngine::init(){
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); 
 
-    initModels();  
+    initModels(); 
 }
 
-void MainEngine::initModels(){
+void ModelDisplayEngine::initModels(){
     Mesh* mesh = new Mesh("meshes/grid.obj");
     Mesh* mGrass = new Mesh("meshes/Grass_update.obj"); 
 
@@ -55,8 +54,8 @@ void MainEngine::initModels(){
     models.push_back(terrain);
 }
 
-void MainEngine::render(){
-    glClearColor(0.1, 0.1, 0.1, 1);
+void ModelDisplayEngine::render(){ 
+    glClearColor(1, 1, 1, 1); 
 
     _camera->updateCameraPosition(_keys); 
     sendDataToShader();
@@ -66,13 +65,13 @@ void MainEngine::render(){
     }
 }
 
-void MainEngine::initShaders(){
+void ModelDisplayEngine::initShaders(){
     Shader vertex(QOpenGLShader::Vertex, "shaders/BaseVertexShader.glsl");
     Shader fragment(QOpenGLShader::Fragment, "shaders/BaseFragmentShader.glsl");
     _shaderProgram = new BaseShaderProgram(&vertex, &fragment);
 }
 
-void MainEngine::sendDataToShader(){
+void ModelDisplayEngine::sendDataToShader(){
     _camera->updateViewMatrix();
     _shaderProgram->setUniformValue("viewMatrix", _camera->getViewMatrix());  
 
@@ -80,18 +79,18 @@ void MainEngine::sendDataToShader(){
     _shaderProgram->setUniformValue("projectionMatrix", _camera->getProjectionMatrix()); 
 }
 
-void MainEngine::keyPress(QKeyEvent* event){
-    _keys[event->key()] = true;
+void ModelDisplayEngine::keyPress(QKeyEvent* event){
+
 }
 
-void MainEngine::keyRelease(QKeyEvent* event){
-    _keys[event->key()] = false;
+void ModelDisplayEngine::keyRelease(QKeyEvent* event){
+
+} 
+
+void ModelDisplayEngine::mouseMove(QMouseEvent* event, QPoint offset){
+
 }
 
-void MainEngine::mouseMove(QMouseEvent* event, QPoint offset){
-    _camera->updateCameraRotation(event->pos().x() - offset.x(), offset.y() - event->pos().y());
-}
-
-void MainEngine::mousePress(QMouseEvent* event){
+void ModelDisplayEngine::mousePress(QMouseEvent* event){
 
 }

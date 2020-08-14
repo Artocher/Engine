@@ -5,6 +5,7 @@
 
 #include "filedock.h"
 #include "mainopenglwindow.h"
+#include "menubar.h"
 
 MainWindow::MainWindow(){
     //MainWindow intel
@@ -18,9 +19,15 @@ MainWindow::MainWindow(){
 
     //Setting up the docks
     _fileDock = new FileDock();
-    addDockWidget(Qt::BottomDockWidgetArea, _fileDock);    
+    _toolDock = new QDockWidget();
+    _toolDock->setMinimumWidth(200);
+
+    addDockWidget(Qt::BottomDockWidgetArea, _fileDock);  
+    addDockWidget(Qt::LeftDockWidgetArea, _toolDock);  
 
     //Setting up the menu
+    _menuBar = new MenuBar();
+    setMenuBar(_menuBar);
 
     //Setting up toolbars
 

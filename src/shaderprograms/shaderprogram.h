@@ -8,8 +8,6 @@ class Shader;
 class Texture;
 class Mesh;
 
-
-
 class ShaderProgram : public QOpenGLShaderProgram{
     public:
         ShaderProgram(Shader* vertexShader, Shader* fragmentShader, Shader* geometryShader = 0); 

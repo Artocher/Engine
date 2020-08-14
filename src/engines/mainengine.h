@@ -3,8 +3,6 @@
 
 #include "engine.h"
 
-class Model;
-
 class MainEngine : public Engine{
     public:
         MainEngine();
@@ -28,8 +26,6 @@ class MainEngine : public Engine{
         void initShaders();
         void sendDataToShader();
         void initModels();
-
-        std::vector<Model*> models;
 };
 
 #endif

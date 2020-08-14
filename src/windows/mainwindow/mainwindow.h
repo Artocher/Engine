@@ -7,6 +7,7 @@
 
 class FileDock;
 class MainOpenGLWindow;
+class MenuBar;
 
 class MainWindow : public QMainWindow{
     public:
@@ -26,7 +27,9 @@ class MainWindow : public QMainWindow{
     private:
         QPointer<QScreen> _screen;
         FileDock* _fileDock;
+        QDockWidget* _toolDock;
         MainOpenGLWindow* _mainOpenGLWindow;
+        MenuBar* _menuBar;
 };
 
 #endif

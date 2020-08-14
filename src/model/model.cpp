@@ -23,8 +23,6 @@ void Model::render(){
 
 void Model::updateModelMatrix(){
     _modelMatrix.setToIdentity();
-
-    std::cout << getPosition().x() << ", " << getPosition().y() << ", " << getPosition().z() << std::endl;
     
     _modelMatrix.translate(getPosition().x(), getPosition().y(), getPosition().z());
     _modelMatrix.rotate(getRotationX(), QVector3D(1,0,0)); 

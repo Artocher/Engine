@@ -7,7 +7,7 @@ uniform sampler2D texture;
  
 varying vec2 v_texcoord; 
 
-vec2 textureTiling = vec2(1,1);
+vec2 textureTiling = vec2(3,3);
 
 void main(){
     vec4 textureColour = texture2D(texture, v_texcoord);   

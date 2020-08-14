@@ -8,6 +8,7 @@
 
 class Camera;
 class BaseShaderProgram;
+class Model;
 
 class Engine : protected QOpenGLFunctions{
     public:
@@ -45,6 +46,8 @@ class Engine : protected QOpenGLFunctions{
         Camera* _camera;
         
         QMap<int, bool> _keys; 
+
+        std::vector<Model*> models;
 };
 
 #endif
